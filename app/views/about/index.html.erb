@@ -1,0 +1,59 @@
+
+<div class="columns">
+  <div class="column">
+    <h1 class="is-size-3">About DnD Spells</h1>
+  </div>
+</div>
+  
+<div class="columns">
+  <div class="column">
+    <p>
+      DnD Spells is a website utilizing the Dungeons & Dragons Spell Listing dataset. This dataset is available for download in CSV format from the kaagle.com website.
+    </p>
+  </div>
+</div>
+
+<div class="columns">
+  <div class="column">
+    <p>
+      The purpose of this website is to display the contents of the dataset in an easily browsable format. The 
+      dataset contains different columns: name, classes, level, school, cast_time, range, duration, verbal, somatic, 
+      material, material_cost, and description.
+    </p>
+  </div>
+</div>
+
+
+<div class="columns">
+  <div class="column">
+    <p>
+      This website contains the following tables and columns:
+    </p>
+  </div>
+</div>
+
+
+<div class="columns">
+  <div class="column">
+    <ul style="list-style-type: circle; list-style-position: inside;">
+      <li>
+        Spells - id (PK), school_id (FK), name, description, level, duration, cast_time, range, material_cost, material, somatic, verbal, created_at, updated_at
+      </li>
+      <li>
+        CharacterClasses - id (PK), name, created_at, updated_at
+      </li>
+      <li>
+        CharacterClassesSpells - spell_id (PK, FK), character_class_id (PK, FK)
+      </li>
+      <li>
+        Schools - id (PK), name, created_at, updated_at
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="columns mt-6">
+  <div class="column is-three-fifths is-offset-one-fifth">
+    <img src="/erd.png">
+  </div>
+</div>
