@@ -9,3 +9,11 @@
 .navbar-menu{
   padding: 0 !important;
 }
+
+.button:hover{
+  background-color:hsl(217, 74%, 70%) !important;
+}
+
+.button a{
+  color:black !important;
+}

@@ -1,0 +1,12 @@
+<h1 class="is-size-3">Classes</h1>
+
+
+<div class="columns is-multiline is-2 is-variable mt-6">
+  <% @character_classes.each do |c| %>
+    <div class="column is-4">
+      <div class="button is-fullwidth is-link is-light is-outlined has-text-centered is-size-5 py-6" onclick="window.location.href = '<%= character_class_path(c) %>'">
+        <%= link_to c.name, character_class_path(c)%>
+      </div>
+    </div>
+  <% end %>
+</div>

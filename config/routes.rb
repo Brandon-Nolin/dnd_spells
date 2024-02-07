@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get 'about', to: "about#index"
 
   resources :spells, only: [:index, :show]
+  resources :character_classes, only: [:index, :show]
 end
