@@ -1,0 +1,35 @@
+<h1 class="is-size-3">Spells</h1>
+
+    <table class="table is-striped is-fullwidth">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>School</th>
+          <th>Level</th>
+          <th>Cast Time</th>
+          <th>Range</th>
+          <th>Duration</th>
+          <th>Components</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @spells.each do |spell| %>
+          <tr>
+            <th><%= link_to spell.name, spell_path(spell) %></th>
+            <td><%= spell.school.name %></td>
+            <td><%= spell.level != 0 ? spell.level : "Cantrip" %></td>
+            <td><%= spell.cast_time %></td>
+            <td><%= spell.range %></td>
+            <td><%= spell.duration %></td>
+            <td>
+              <% components = [] %>
+              <% components << 'V' if spell.verbal %>
+              <% components << 'S' if spell.somatic %>
+              <% components << 'M' if spell.material %>
+              <%= components.join(', ') %>
+            </td>
+
+          </tr>
+        <% end %>
+      </tbody>
+    </table>

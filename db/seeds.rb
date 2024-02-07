@@ -24,7 +24,7 @@ spells.each do |spell_data|
     level: spell_data["level"].to_i,
     duration: spell_data["duration"],
     cast_time: spell_data["cast_time"],
-    range: spell_data["cast_time"],
+    range: spell_data["range"],
     somatic: spell_data["somatic"],
     verbal: spell_data["verbal"],
     material: spell_data["material"],
