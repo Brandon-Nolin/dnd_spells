@@ -47,6 +47,25 @@
           </form>
         </div>
       </div> %>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <%= form_with url: search_spells_path, method: :get, local: true, html: { class: "is-flex" } do %>
+            <div class="control">
+              <%= text_field_tag(:keywords, nil, class: "input", placeholder: "Spell name") %>
+            </div>
+            <div class="control">
+              <%= collection_select(:school, :name, School.all, :name, :name, { prompt: "Select a school" }, { class: "dropdown-content" }) %>
+            </div>
+            <div class="control">
+              <%= collection_select(:character_class, :name, CharacterClass.all, :name, :name, { prompt: "Select a class" }, { class: "dropdown-content" }) %>
+            </div>
+            <div class="control">
+              <%= submit_tag("Search", class: "button is-danger") %>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </nav>
 </header>
