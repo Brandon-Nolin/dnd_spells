@@ -1,0 +1,11 @@
+<h1 class="is-size-3">Schools</h1>
+
+<div class="columns is-multiline is-2 is-variable mt-2">
+  <% @schools.each do |school| %>
+    <div class="column is-6">
+      <div class="button is-fullwidth is-link is-light is-outlined has-text-centered is-size-5 py-6" onclick="window.location.href = '<%= school_path(school) %>'">
+        <%= link_to school.name, school_path(school)%>
+      </div>
+    </div>
+  <% end %>
+</div>

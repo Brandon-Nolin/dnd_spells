@@ -4,4 +4,5 @@ Rails.application.routes.draw do
 
   resources :spells, only: [:index, :show]
   resources :character_classes, only: [:index, :show]
+  resources :schools, only: [:index, :show]
 end
