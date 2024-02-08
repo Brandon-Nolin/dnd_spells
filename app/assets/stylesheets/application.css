@@ -17,3 +17,24 @@
 .button a{
   color:black !important;
 }
+
+.pagination {
+  border-radius: 5px;
+  background-color: rgb(246, 246, 246);
+  border: 1px solid black;
+}
+
+.pagination .page,
+.pagination .next,
+.pagination .last,
+.pagination .first,
+.pagination .prev {
+  flex-grow: 1;
+  padding: 6px;
+  font-weight: 600;
+}
+
+.pagination .current{
+  background-color: rgb(116, 116, 116);
+  color: white;
+}

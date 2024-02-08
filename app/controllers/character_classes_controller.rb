@@ -4,6 +4,7 @@ class CharacterClassesController < ApplicationController
   end
 
   def show
-    @character_class = CharacterClass.includes(:spells).find(params[:id])
+    @character_class = CharacterClass.find(params[:id])
+    @spells = @character_class.spells.page(params[:page]).per(50)
   end
 end

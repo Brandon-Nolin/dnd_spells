@@ -1,9 +1,9 @@
 class SpellsController < ApplicationController
   def index
-    @spells = Spell.includes(:school).all
+    @spells = Spell.includes(:school).page(params[:page]).per(50)
   end
 
   def show
-    @spells = Spell.all
+    @spell = Spell.find(params[:id])
   end
 end
