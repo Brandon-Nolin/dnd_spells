@@ -2,7 +2,9 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>School</th>
+      <% unless request.path.include?('/schools') %>
+        <th>School</th>
+      <% end %>
       <th>Level</th>
       <th>Cast Time</th>
       <th>Range</th>
@@ -14,7 +16,9 @@
     <% spells.each do |spell| %>
       <tr>
         <th><%= link_to spell.name, spell_path(spell) %></th>
-        <td><%= spell.school.name %></td>
+        <% unless request.path.include?('/schools') %>
+          <td><%= spell.school.name %></td>
+        <% end %>
         <td><%= spell.level != 0 ? spell.level : "Cantrip" %></td>
         <td><%= spell.cast_time %></td>
         <td><%= spell.range %></td>
