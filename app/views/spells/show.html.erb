@@ -1,0 +1,35 @@
+<h1 class="is-size-3"><%= @spell.name %></h1>
+
+<br/>
+<p>
+  <em>
+    <% if @spell.level != 0 %>
+      <%= "#{@spell.level.ordinalize}-level" %> <%= link_to @spell.school.name, school_path(@spell.school) %>
+    <% else %>
+      <%= link_to @spell.school.name, school_path(@spell.school) %> Cantrip
+    <% end %>
+  </em>
+</p>
+<br/>
+<p><strong>Casting Time:</strong> <%= @spell.cast_time %></p>
+<p><strong>Range:</strong> <%= @spell.range %></p>
+<p>
+  <strong>Components:</strong>
+  <% components = [] %>
+  <% components << 'V' if @spell.verbal %>
+  <% components << 'S' if @spell.somatic %>
+  <% components << 'M' if @spell.material %>
+  <%= components.join(', ') %>
+</p>
+<p><strong>Duration:</strong> <%= @spell.duration %></p>
+<br/>
+<p>
+  <%= raw @spell.description.gsub(/(At Higher Levels)/, '<br/><br/><strong>\1</strong>') %>
+</p>
+<br/>
+<p>
+  <strong>Spell Lists:</strong>
+  <% @spell.character_classes.each do |c| %>
+    <%= link_to c.name, character_class_path(c) %><% unless c == @spell.character_classes.last %>, <% end %>
+  <% end %>
+</p>
