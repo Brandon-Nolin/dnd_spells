@@ -1,3 +1,3 @@
 <h1 class="is-size-3">Spells</h1>
-
+<p>Showing all <%= @character_class %> <%= @school %> spells containing "<%= @name_search.split("%")[1] %>"</p>
 <%= render partial: 'common/spells_table', locals: { spells: @spells } %>
