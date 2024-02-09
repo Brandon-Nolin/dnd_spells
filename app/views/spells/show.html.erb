@@ -20,6 +20,7 @@
   <% components << 'S' if @spell.somatic %>
   <% components << 'M' if @spell.material %>
   <%= components.join(', ') %>
+  <%= "(#{@spell.material_cost})" if @spell.material_cost%>
 </p>
 <p><strong>Duration:</strong> <%= @spell.duration %></p>
 <br/>
