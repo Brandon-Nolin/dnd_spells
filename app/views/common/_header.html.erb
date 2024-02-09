@@ -35,19 +35,6 @@
         </a>
       </div>
 
-      <%# <div class="navbar-end">
-        <div class="navbar-item">
-          <form action="search/">
-            <div class="control">
-              <input class="input" type="text" id="name" name="name" placeholder="Input spell name...">
-            </div>
-            <div class="control">
-              <button type="submit" class="button is-danger">Search</button>
-            </div>
-          </form>
-        </div>
-      </div> %>
-
       <div class="navbar-end">
         <div class="navbar-item">
           <%= form_with url: search_spells_path, method: :get, local: true, html: { class: "is-flex" } do %>
@@ -55,10 +42,20 @@
               <%= text_field_tag(:keywords, nil, class: "input", placeholder: "Spell name") %>
             </div>
             <div class="control">
-              <%= collection_select(:school, :name, School.all, :name, :name, { prompt: "Select a school" }, { class: "dropdown-content" }) %>
+              <select class="dropdown-content" name="school[name]">
+                <option disabled selected>Select a School</option>
+                <% School.all.each do |school| %>
+                    <option value="<%= school.name %>"><%= school.name %></option>
+                <% end %>
+              </select>
             </div>
             <div class="control">
-              <%= collection_select(:character_class, :name, CharacterClass.all, :name, :name, { prompt: "Select a class" }, { class: "dropdown-content" }) %>
+              <select class="dropdown-content" name="class[name]">
+                <option disabled selected>Select a Class</option>
+                <% CharacterClass.all.each do |c| %>
+                    <option value="<%= c.name %>"><%= c.name %></option>
+                <% end %>
+              </select>
             </div>
             <div class="control">
               <%= submit_tag("Search", class: "button is-danger") %>
